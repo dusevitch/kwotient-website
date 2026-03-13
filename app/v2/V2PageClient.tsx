@@ -830,6 +830,216 @@ function EconomicsSection() {
   );
 }
 
+// ─── Section: One More Thing Objection ───────────────────────────────────────
+
+function OneMoreThingSection() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.08 });
+
+  return (
+    <section className="py-24 md:py-[120px] bg-kwotient-surface border-y border-kwotient-border">
+      <div className="mx-auto max-w-[1200px] px-6">
+        {/* Header */}
+        <div
+          ref={ref as React.RefObject<HTMLDivElement>}
+          className={`mb-16 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-kwotient-border bg-white px-4 py-1.5 mb-5">
+            <span className="text-xs font-semibold text-kwotient-muted uppercase tracking-wider">
+              The real objection
+            </span>
+          </div>
+          <h2
+            className="text-[28px] md:text-[42px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] mb-5 max-w-3xl"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            &ldquo;One more thing to log into&rdquo;{" "}
+            <span className="text-kwotient-accent">is the wrong frame.</span>
+          </h2>
+          <p
+            className="text-[17px] text-kwotient-muted leading-[1.65] max-w-2xl"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            The tools that win this objection live where the work already happens and save more time
+            than they add. The ones that lose it require you to open a new tab, copy-paste between
+            apps, and maintain a workflow that doesn&apos;t fit how you actually sell.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left — Chrome extension answer + ROI */}
+          <div className="flex flex-col gap-6">
+            {/* Chrome Extension Card */}
+            <div className="bg-white rounded-2xl border border-kwotient-border p-7">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="h-10 w-10 rounded-xl bg-kwotient-accent/10 flex items-center justify-center flex-shrink-0">
+                  <svg className="h-5 w-5 text-kwotient-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3
+                    className="text-[18px] font-bold text-kwotient-ink mb-1"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    The Chrome extension answers it completely.
+                  </h3>
+                  <p className="text-sm text-kwotient-muted leading-relaxed">
+                    If your rep never leaves Gmail — clicks a button, 15 seconds later a draft lands
+                    in the compose window, they review and hit send — it&apos;s not &ldquo;one more
+                    thing.&rdquo; It&apos;s a button inside the tool they already use 6 hours a day.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step flow */}
+              <div className="flex items-center gap-2 text-xs text-kwotient-muted font-medium">
+                {[
+                  "Open Gmail",
+                  "Click Kwotient",
+                  "Draft appears (15s)",
+                  "Review & send",
+                ].map((step, i, arr) => (
+                  <div key={step} className="flex items-center gap-2">
+                    <span className="bg-kwotient-surface border border-kwotient-border rounded-lg px-2.5 py-1 whitespace-nowrap">
+                      {step}
+                    </span>
+                    {i < arr.length - 1 && (
+                      <span className="text-kwotient-border">→</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* What it replaces card */}
+            <div className="bg-white rounded-2xl border border-kwotient-border p-7">
+              <h3
+                className="text-[16px] font-bold text-kwotient-ink mb-4"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                What Kwotient replaces — not adds to.
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {[
+                  "Manual email writing: ~45 min/day of your rep&apos;s best hours",
+                  "Mental load of &ldquo;what do I even say to this person&rdquo;",
+                  "Tracking which contacts have gone cold and need what type of follow-up",
+                  "Salesloft / Outreach AI that ignores the actual conversation thread",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-kwotient-muted">
+                    <svg className="h-4 w-4 text-kwotient-success flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Right — ROI math */}
+          <div className="bg-kwotient-ink rounded-2xl p-7 text-white">
+            <p className="text-xs font-semibold text-dark-accent uppercase tracking-widest mb-5">
+              The time math, concretely
+            </p>
+
+            {/* Before */}
+            <div className="mb-6">
+              <p className="text-[11px] font-semibold text-dark-muted uppercase tracking-wider mb-3">
+                An SDR today
+              </p>
+              <div className="flex flex-col gap-2.5">
+                {[
+                  "30–60 min/day writing and personalizing emails",
+                  "50–100 emails/day using templates that get 1–3% reply rates",
+                  "Mental overhead tracking cold contacts, timing, follow-up strategy",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2.5 text-sm text-dark-muted">
+                    <span className="text-red-400 mt-0.5 flex-shrink-0">—</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="h-px bg-white/10 mb-6" />
+
+            {/* After */}
+            <div className="mb-6">
+              <p className="text-[11px] font-semibold text-dark-muted uppercase tracking-wider mb-3">
+                With Kwotient
+              </p>
+              <div className="flex flex-col gap-2.5">
+                {[
+                  "Email writing: 30–60 min → 5–10 min for review",
+                  "Scale to 150–200/day — drafting is no longer the bottleneck",
+                  "Even 2% → 4% reply rate on 200 emails/day doubles pipeline",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2.5 text-sm text-dark-text">
+                    <span className="text-kwotient-success mt-0.5 flex-shrink-0">+</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="h-px bg-white/10 mb-6" />
+
+            {/* ROI callout */}
+            <div className="rounded-xl bg-dark-surface p-4">
+              <p className="text-[11px] font-semibold text-dark-muted uppercase tracking-wider mb-3">
+                Time saved alone
+              </p>
+              <div className="flex flex-col gap-1.5 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-dark-muted">Time saved per day</span>
+                  <span className="text-dark-text font-semibold">30–50 min</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-dark-muted">Per month (~22 workdays)</span>
+                  <span className="text-dark-text font-semibold">11–18 hrs</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-dark-muted">At $28/hr avg SDR cost</span>
+                  <span className="text-dark-text font-semibold">$300–500/mo</span>
+                </div>
+                <div className="h-px bg-white/10 my-1" />
+                <div className="flex justify-between">
+                  <span className="text-dark-muted">Kwotient subscription</span>
+                  <span className="text-dark-text font-semibold">$69–149/mo</span>
+                </div>
+                <div className="flex justify-between mt-1">
+                  <span className="text-dark-accent font-semibold">ROI on time alone</span>
+                  <span className="text-dark-accent font-bold">2–4× before pipeline</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom callout */}
+        <div className="mt-12 bg-white rounded-2xl border border-kwotient-border p-7 max-w-3xl">
+          <p className="text-[11px] font-semibold text-kwotient-accent uppercase tracking-widest mb-3">
+            The real failure mode to watch for
+          </p>
+          <p className="text-[16px] font-semibold text-kwotient-ink mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+            The objection is a proxy for &ldquo;I&apos;ve been burned by AI email tools before.&rdquo;
+          </p>
+          <p className="text-sm text-kwotient-muted leading-relaxed">
+            The actual failure mode isn&apos;t price, and it&apos;s not the install. It&apos;s that the first few
+            drafts are mediocre and reps stop using it. That&apos;s why draft quality at launch is everything.
+            Kwotient doesn&apos;t spin templates. It reads the actual conversation thread, mirrors the
+            prospect&apos;s writing style, and applies the right sales methodology for the moment. The
+            output looks like a rep who did their homework — because the system did.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Section: Three Perspectives Critique ───────────────────────────────────
 
 function CritiqueSection() {
@@ -1100,6 +1310,7 @@ export function V2PageClient() {
         <VoiceMirroringSection />
         <OvernightQueueSection />
         <EconomicsSection />
+        <OneMoreThingSection />
         <StatsSection />
         <CritiqueSection />
         <TrainingSection />
