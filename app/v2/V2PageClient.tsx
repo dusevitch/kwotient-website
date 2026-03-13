@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Accordion } from "@/components/ui/Accordion";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 // ─── Section: Hero ──────────────────────────────────────────────────────────
@@ -121,7 +122,7 @@ function HeroSection() {
               icon: "✗",
               title: "Other AI outreach tools",
               description:
-                "Template libraries with AI fill-ins. Still guesswork.",
+                "Template libraries with AI fill-ins. Expensive fees. Still guesswork.",
               negative: true,
             },
             {
@@ -222,7 +223,7 @@ function CoreDifferenceSection() {
             </span>
           </div>
           <h2
-            className="text-[28px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] max-w-2xl mx-auto text-center"
+            className="text-[28px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] max-w-2xl mx-auto"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Why AI alone isn&apos;t enough — and why Kwotient is different
@@ -379,7 +380,7 @@ function PlaybookSection() {
           }`}
         >
           <h2
-            className="text-[32px] md:text-[48px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.025em] mb-5 text-center"
+            className="text-[32px] md:text-[48px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.025em] mb-5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             70+ rules, sourced from the world&apos;s best{" "}
@@ -464,7 +465,7 @@ function VoiceMirroringSection() {
           }`}
         >
           <h2
-            className="text-[30px] md:text-[44px] font-extrabold text-white leading-[1.12] tracking-[-0.02em] mb-5 max-w-3xl mx-auto text-center"
+            className="text-[30px] md:text-[44px] font-extrabold text-white leading-[1.12] tracking-[-0.02em] mb-5 max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Your contact&apos;s words, used against them.{" "}
@@ -604,7 +605,7 @@ function OvernightQueueSection() {
             </span>
           </div>
           <h2
-            className="text-[30px] md:text-[44px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] text-center"
+            className="text-[30px] md:text-[44px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Your outreach is ready{" "}
@@ -679,7 +680,7 @@ function EconomicsSection() {
           }`}
         >
           <h2
-            className="text-[28px] md:text-[42px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] mb-5 text-center"
+            className="text-[28px] md:text-[42px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] mb-5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             The most cost-efficient AI outreach on the market.{" "}
@@ -870,7 +871,7 @@ function CritiqueSection() {
           }`}
         >
           <h2
-            className="text-[28px] md:text-[42px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] mb-5 text-center"
+            className="text-[28px] md:text-[42px] font-extrabold text-kwotient-ink leading-[1.12] tracking-[-0.02em] mb-5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Every email gets reviewed by{" "}
@@ -975,7 +976,7 @@ function TrainingSection() {
           }`}
         >
           <h2
-            className="text-[30px] md:text-[44px] font-extrabold text-white leading-[1.12] tracking-[-0.02em] max-w-3xl mx-auto text-center"
+            className="text-[30px] md:text-[44px] font-extrabold text-white leading-[1.12] tracking-[-0.02em] max-w-3xl mx-auto"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             A new rep. Sending like a 10-year veteran.{" "}
@@ -1066,7 +1067,7 @@ function FaqSection() {
           }`}
         >
           <h2
-            className="text-[28px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] mb-4 text-center"
+            className="text-[28px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             For the skeptics.{" "}
@@ -1092,18 +1093,21 @@ function FaqSection() {
 
 export function V2PageClient() {
   return (
-    <main>
-      <HeroSection />
-      <CoreDifferenceSection />
-      <PlaybookSection />
-      <VoiceMirroringSection />
-      <OvernightQueueSection />
-      <EconomicsSection />
-      <StatsSection />
-      <CritiqueSection />
-      <TrainingSection />
-      <FaqSection />
-      <FinalCTA />
-    </main>
+    <>
+      <main>
+        <HeroSection />
+        <CoreDifferenceSection />
+        <PlaybookSection />
+        <VoiceMirroringSection />
+        <OvernightQueueSection />
+        <EconomicsSection />
+        <StatsSection />
+        <CritiqueSection />
+        <TrainingSection />
+        <FaqSection />
+        <FinalCTA />
+      </main>
+      <ThemeSwitcher />
+    </>
   );
 }
