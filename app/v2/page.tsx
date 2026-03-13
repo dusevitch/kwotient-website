@@ -1,13 +1,37 @@
 import type { Metadata } from "next";
-import { V2PageClient } from "./V2PageClient";
+import { Hero } from "@/components/sections/Hero";
+import { LogoCloud } from "@/components/sections/LogoCloud";
+import { ProblemStatement } from "@/components/sections/ProblemStatement";
+import { SolutionOverview } from "@/components/sections/SolutionOverview";
+import { FeatureShowcase } from "@/components/sections/FeatureShowcase";
+import { StatsSection } from "@/components/sections/StatsSection";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { ComparisonTable } from "@/components/sections/ComparisonTable";
+import { PricingPreview } from "@/components/sections/PricingPreview";
+import { FAQ } from "@/components/sections/FAQ";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Why Kwotient? The Playbook-Driven Difference | Kwotient",
+  title: "Kwotient — Original Landing Page",
   description:
-    "See how Kwotient's 70-rule playbook, 25-step validation, and voice mirroring make it fundamentally different from every other AI email outreach tool.",
+    "Kwotient drafts AI-powered sales emails trained on your top performers, then keeps your reps in the loop to review, approve, and send.",
   robots: "noindex, nofollow",
 };
 
 export default function V2Page() {
-  return <V2PageClient />;
+  return (
+    <>
+      <Hero />
+      <LogoCloud />
+      <ProblemStatement />
+      <SolutionOverview />
+      <FeatureShowcase />
+      <StatsSection />
+      <HowItWorks />
+      <ComparisonTable />
+      <PricingPreview />
+      <FAQ />
+      <FinalCTA />
+    </>
+  );
 }

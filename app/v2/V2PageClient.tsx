@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import { Accordion } from "@/components/ui/Accordion";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 // ─── Section: Hero ──────────────────────────────────────────────────────────
@@ -1107,7 +1106,6 @@ export function V2PageClient() {
         <FaqSection />
         <FinalCTA />
       </main>
-      <ThemeSwitcher />
     </>
   );
 }

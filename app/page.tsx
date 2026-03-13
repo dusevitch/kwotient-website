@@ -1,15 +1,5 @@
 import type { Metadata } from "next";
-import { Hero } from "@/components/sections/Hero";
-import { LogoCloud } from "@/components/sections/LogoCloud";
-import { ProblemStatement } from "@/components/sections/ProblemStatement";
-import { SolutionOverview } from "@/components/sections/SolutionOverview";
-import { FeatureShowcase } from "@/components/sections/FeatureShowcase";
-import { StatsSection } from "@/components/sections/StatsSection";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { ComparisonTable } from "@/components/sections/ComparisonTable";
-import { PricingPreview } from "@/components/sections/PricingPreview";
-import { FAQ } from "@/components/sections/FAQ";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { V2PageClient } from "./v2/V2PageClient";
 
 export const metadata: Metadata = {
   title: "Kwotient — AI Email Outreach That Keeps Humans in the Loop",
@@ -46,19 +36,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <Hero />
-      <LogoCloud />
-      <ProblemStatement />
-      <SolutionOverview />
-      <FeatureShowcase />
-      <StatsSection />
-      <HowItWorks />
-      <ComparisonTable />
-      <PricingPreview />
-      <FAQ />
-      <FinalCTA />
-    </>
-  );
+  return <V2PageClient />;
 }
