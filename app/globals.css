@@ -1,26 +1,233 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand Colors */
+  --color-kwotient-ink: #0F1729;
+  --color-kwotient-paper: #FAFBFD;
+  --color-kwotient-surface: #F1F3F7;
+  --color-kwotient-accent: #E8590C;
+  --color-kwotient-accent-hover: #D14B06;
+  --color-kwotient-secondary: #2563EB;
+  --color-kwotient-muted: #64748B;
+  --color-kwotient-border: #E2E8F0;
+  --color-kwotient-success: #16A34A;
+
+  /* Dark Mode Colors */
+  --color-dark-bg: #0F1729;
+  --color-dark-surface: #1A2340;
+  --color-dark-text: #F1F3F7;
+  --color-dark-muted: #94A3B8;
+  --color-dark-accent: #F97316;
+
+  /* Fonts */
+  --font-heading: var(--font-plus-jakarta-sans);
+  --font-body: var(--font-dm-sans);
+
+  /* Animation Timings */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFBFD;
+  color: #0F1729;
+  font-family: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s var(--ease-smooth) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s var(--ease-smooth) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s var(--ease-smooth) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s var(--ease-smooth) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Scroll Reveal - Initial State */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }
+
+/* Hero Load Animations */
+.hero-h1 {
+  opacity: 0;
+  animation: fadeInUp 0.7s var(--ease-smooth) 0ms forwards;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.7s var(--ease-smooth) 200ms forwards;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeInUp 0.7s var(--ease-smooth) 400ms forwards;
+}
+
+.hero-visual {
+  opacity: 0;
+  animation: scaleIn 0.8s var(--ease-smooth) 300ms forwards;
+}
+
+/* Card Hover */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(15, 23, 41, 0.12);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F3F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid #E8590C;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(232, 89, 12, 0.15);
+  color: #0F1729;
 }
