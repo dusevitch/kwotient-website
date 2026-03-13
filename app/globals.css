@@ -123,6 +123,17 @@ body {
   }
 }
 
+/*
+  Belt-and-suspenders: explicitly set text-align on headings that carry the
+  text-center class. This is an *unlayered* rule (specificity 0-1-1) which
+  beats any layered rule that might interfere, and also beats the unlayered
+  h2 { margin:0 } rule (specificity 0-0-1) on the text-align property.
+*/
+h1.text-center, h2.text-center, h3.text-center,
+h4.text-center, h5.text-center, h6.text-center {
+  text-align: center;
+}
+
 /* Animation Utility Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s var(--ease-smooth) forwards;
