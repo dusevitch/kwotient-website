@@ -97,7 +97,7 @@ export default function AboutPage() {
               </span>
             </div>
             <h1
-              className="text-[40px] md:text-[56px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-6 text-center"
+              className="text-[40px] md:text-[56px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-6"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               We believe outreach should be{" "}
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <h2
-                className="text-[32px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] mb-6 text-center"
+                className="text-[32px] md:text-[40px] font-extrabold text-kwotient-ink leading-[1.15] tracking-[-0.02em] mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Built by people who actually ran outbound teams.

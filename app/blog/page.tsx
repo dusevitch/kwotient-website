@@ -55,7 +55,7 @@ export default function BlogPage() {
               </span>
             </div>
             <h1
-              className="text-[40px] md:text-[56px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-4 text-center"
+              className="text-[40px] md:text-[56px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-4"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Outreach that actually{" "}

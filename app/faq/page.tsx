@@ -170,7 +170,12 @@ const FAQ_CATEGORIES = [
       {
         question: "What counts as an email toward my monthly limit?",
         answer:
-          "Each outbound email drafted and sent through Kwotient counts as one email. Drafts you don't send, rejected emails that are regenerated, and test emails do not count. Unused emails do not roll over to the next month.",
+          "An email counts any time Kwotient's expert system is engaged to draft or redraft a message — that's the work of crafting the best possible offer for that prospect. Drafts you don't send, test emails, and internal messages do not count. Unused emails do not roll over to the next month.",
+      },
+      {
+        question: "Can I edit the final draft before sending?",
+        answer:
+          "Yes. Every draft Kwotient produces is fully editable before it leaves your queue. Any changes you make — adjusting tone, swapping a line, adding context — are captured and used to continuously refine the system's output for your account. Over time, it learns exactly how you write and what you prefer, so you edit less and less.",
       },
       {
         question: "Can I upgrade or downgrade?",
@@ -225,7 +230,7 @@ export default function FAQPage() {
                 </span>
               </div>
               <h1
-                className="text-[40px] md:text-[52px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-4 text-center"
+                className="text-[40px] md:text-[52px] font-extrabold text-kwotient-ink leading-[1.1] tracking-[-0.03em] mb-4"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Questions worth asking{" "}
